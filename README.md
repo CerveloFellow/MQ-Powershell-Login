@@ -19,24 +19,24 @@ If the client window name is set, the powershell script will look for windows wi
 
 For each team that has a .ps1 file you'll want to check the configurations at the top.
 
-PowerShell file notes
-# Path to your JSON containing your config
+#PowerShell file notes
+--Path to your JSON containing your config
 $AutoLogin = Get-Content -Raw -Path "C:\Users\user1\Desktop\EverQuest\AccountConfiguration.json" | ConvertFrom-Json
-# A driver character must be set or you'll get errors
+--A driver character must be set or you'll get errors
 $Driver = "DriverCharacter"
-# Bots can be 0 to many in this array.  A full team will look like this
+--Bots can be 0 to many in this array.  A full team will look like this
 $Bots = @("BotCharacter1", "BotCharacter2", "BotCharacter3", "BotCharacter4", "BotCharacter5")
-# No bots would look like this
+--No bots would look like this
 $Bots = @()
 
-JSON file notes
+#JSON file notes
 The sample JSON file should be fairly self explanatory, but here's a couple of quick comments.
 
-  # The path to your EQ Game exe for the driver of your team
+  --The path to your EQ Game exe for the driver of your team
   "DriverClientFilePath" : "C:\\Project Lazarus - Main\\eqgame.exe",
-  # The directory you want to run the driver out of
+  --The directory you want to run the driver out of
   "DriverClientWorkingDirectory" : "C:\\Project Lazarus - Main",
-  # The path to your EQ Game exe for your bots
+  --The path to your EQ Game exe for your bots
   "BotClientFilePath" : "C:\\Project Lazarus\\eqgame.exe",
   # The directory you want to run the bots out of
   "BotClientWorkingDirectory" : "C:\\Project Lazarus",
