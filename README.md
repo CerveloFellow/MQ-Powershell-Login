@@ -1,6 +1,7 @@
 # MQ-Powershell-Login
 Powershell scripts to autologin your Everquest team with MacroQuest
 
+## Basics
 If you're not familiar with powershell, you might be best of running the scripts initially with "Windows Powershell ISE" so you can see the errors you are getting.  Otherwise you can usually just right click your .ps1 file and Run With PowerShell.
 
 See this FAQ for some common first time run errors:
@@ -19,78 +20,94 @@ Your file may contain more than the above depending on what it's doing, but look
 
 If the client window name is set, the powershell script will look for windows with that name to determine if your game client is running for this character.
 
+
+
+## PowerShell file notes
 For each team that has a .ps1 file you'll want to check the configurations at the top.
 
-# PowerShell file notes
---Path to your JSON containing your config
+Path to your JSON containing your config
 $AutoLogin = Get-Content -Raw -Path "C:\Users\user1\Desktop\EverQuest\AccountConfiguration.json" | ConvertFrom-Json
---A driver character must be set or you'll get errors
+
+A driver character must be set or you'll get errors
 $Driver = "DriverCharacter"
---Bots can be 0 to many in this array.  A full team will look like this
+
+Bots can be 0 to many in this array.  A full team will look like this
 $Bots = @("BotCharacter1", "BotCharacter2", "BotCharacter3", "BotCharacter4", "BotCharacter5")
---No bots would look like this
+
+No bots would look like this
 $Bots = @()
 
-# JSON file notes
+## JSON file notes
 The sample JSON file should be fairly self explanatory, but here's a couple of quick comments.
 
-  --The path to your EQ Game exe for the driver of your team
-  "DriverClientFilePath" : "C:\\Project Lazarus - Main\\eqgame.exe",
-  --The directory you want to run the driver out of
-  "DriverClientWorkingDirectory" : "C:\\Project Lazarus - Main",
-  --The path to your EQ Game exe for your bots
-  "BotClientFilePath" : "C:\\Project Lazarus\\eqgame.exe",
-  --The directory you want to run the bots out of
-  "BotClientWorkingDirectory" : "C:\\Project Lazarus",
-  --The path to your Macroquest exe file
-  "MacroQuestFilePath" : "C:\\E3_RoF2\\MacroQuest2.exe",
-  --The directory you want to run MacroQuest out of
-  "MacroQuestWorkingDirectory" : "C:\\E3_RoF2",
-  --The process name that your version of MacroQuest runs as.  When in doubt, run MacroQuest and check task manager for the task name.
-  "MacroQuestProcessName" : "MacroQuest2",
-  --The process name that eqgame.exe uses, this shouldn't change but when in doubt, check task manager.
-  "EverQuestProcessName" : "eqgame",
-  --The path to your EQBCServer.exe file
-  "EQBCServerFilePath" : "C:\\E3_RoF2\\EQBCServer.exe",
-  --The folder to run EQBCServer out of
-  "EQBCServerWorkingDirectory" : "C:\\E3_RoF2",
-  --The process name for EQBCServer
-  "EQBCServerProcessName" : "EQBCServer",
-  --The path to your MQ2AutoLogin.ini file 
-  "AutoLoginFile" : "C:\\E3_RoF2\\config\\MQ2AutoLogin.ini",
+  The path to your EQ Game exe for the driver of your team  
+  "DriverClientFilePath" : "C:\\Project Lazarus - Main\\eqgame.exe"
+  
+  The directory you want to run the driver out of  
+  "DriverClientWorkingDirectory" : "C:\\Project Lazarus - Main"
+  
+  The path to your EQ Game exe for your bots  
+  "BotClientFilePath" : "C:\\Project Lazarus\\eqgame.exe"
+  
+  The directory you want to run the bots out of  
+  "BotClientWorkingDirectory" : "C:\\Project Lazarus"
+  
+  The path to your Macroquest exe file  
+  "MacroQuestFilePath" : "C:\\E3_RoF2\\MacroQuest2.exe"
+  
+  The directory you want to run MacroQuest out of  
+  "MacroQuestWorkingDirectory" : "C:\\E3_RoF2"
+  
+  The process name that your version of MacroQuest runs as.  When in doubt, run MacroQuest and check task manager for the task name.  
+  "MacroQuestProcessName" : "MacroQuest2"
+  
+  The process name that eqgame.exe uses, this shouldn't change but when in doubt, check task manager.  
+  "EverQuestProcessName" : "eqgame"
+  
+  The path to your EQBCServer.exe file  
+  "EQBCServerFilePath" : "C:\\E3_RoF2\\EQBCServer.exe"
+  
+  The folder to run EQBCServer out of  
+  "EQBCServerWorkingDirectory" : "C:\\E3_RoF2"
+  
+  The process name for EQBCServer  
+  "EQBCServerProcessName" : "EQBCServer"
+  
+  The path to your MQ2AutoLogin.ini file  
+  "AutoLoginFile" : "C:\\E3_RoF2\\config\\MQ2AutoLogin.ini"
 
-The rest of the JSON file is to define logins and characters.  Multiple characters can exist on a single login.  The powershell script will try to modify your MQ2AutoLogin.ini file and swap characters so they can be auto logged in if you have different characters on a single account
+The rest of the JSON file is to define logins and characters.  Multiple characters can exist on a single login.  The powershell script will try to modify your MQ2AutoLogin.ini file and swap characters so they can be auto logged in if you have different characters on a single account  
 
-"Accounts" : [ 
-	{
-    "Account" : "Account1",
-    "Characters" : [ "Character1", "Character2" ]
-    },
-    {
-    "Account" : "Account2",
-    "Characters" : [ "Character1", "Character2" ]
-    },
-    {
-    "Account" : "Account3",
-    "Characters" : [ "Character1", "Character2" ]
-    },
-    {
-    "Account" : "Account4",
-    "Characters" : [ "Character1", "Character2" ]
-    },
-    {
-    "Account" : "Account5",
-    "Characters" : [ "Character1", "Character2" ]
-    },
-	{
-    "Account" : "Account6",
-    "Characters" : [ "Character1", "Character2" ]
-    },
-    {
-    "Account" : "Account7",
-    "Characters" : [ "Character1" ]
-    }
-  ]
+"Accounts" : [  
+	{  
+    "Account" : "Account1",  
+    "Characters" : [ "Character1", "Character2" ]  
+    },  
+    {  
+    "Account" : "Account2",  
+    "Characters" : [ "Character1", "Character2" ]  
+    },  
+    {  
+    "Account" : "Account3",  
+    "Characters" : [ "Character1", "Character2" ]  
+    },  
+    {  
+    "Account" : "Account4",  
+    "Characters" : [ "Character1", "Character2" ]  
+    },  
+    {  
+    "Account" : "Account5",  
+    "Characters" : [ "Character1", "Character2" ]  
+    },  
+	{  
+    "Account" : "Account6",  
+    "Characters" : [ "Character1", "Character2" ]  
+    },  
+    {  
+    "Account" : "Account7",  
+    "Characters" : [ "Character1" ]  
+    }  
+  ]  
   
 
 
