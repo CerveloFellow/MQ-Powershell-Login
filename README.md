@@ -1,7 +1,7 @@
 # MQ-Powershell-Login
 Powershell scripts to autologin your Everquest team with MacroQuest
 
-If you're not familiar with powershell, you might be best of running the scripts initially with "Windows Powershell ISE" so you can see the errors you are getting.
+If you're not familiar with powershell, you might be best of running the scripts initially with "Windows Powershell ISE" so you can see the errors you are getting.  Otherwise you can usually just right click your .ps1 file and Run With PowerShell.
 
 See this FAQ for some common first time run errors:
 https://www.faqforge.com/powershell/executing-powershell-script-first-time/
@@ -11,13 +11,25 @@ https://jsoneditoronline.org/
 
 The script and accompanying JSON file let you define some basic parameters for, Everquest, MacroQuest, EBCSServe, Accounts and Characters.  Set this file up one time and then save a powershell script for each team or individual you want to quickly login with.  The powershell script will attempt to see what processes are running and only start new processes if none are running.  This includes EverQuest game client for your driver and bots(*** See note below for how it determines which bot is running***), MacroQuest and EQBCServer.
 
-EQ client window names can be set in the zoned.cfg file as following(your file may contain more than this depending on what it's doing, but look for a line that sets your window title).
+EQ client window names can be set in the zoned.cfg(file location varies depending on your configuration) file as following:
 /setwintitle ${Me.Name}
+Your file may contain more than the above depending on what it's doing, but look for a line that sets your window title.
 
 If the client window name is set, the powershell script will look for windows with that name to determine if your game client is running for this character.
 
+For each team that has a .ps1 file you'll want to check the configurations at the top.
 
+PowerShell file notes
+# Path to your JSON containing your config
+$AutoLogin = Get-Content -Raw -Path "C:\Users\user1\Desktop\EverQuest\AccountConfiguration.json" | ConvertFrom-Json
+# A driver character must be set or you'll get errors
+$Driver = "DriverCharacter"
+# Bots can be 0 to many in this array.  A full team will look like this
+$Bots = @("BotCharacter1", "BotCharacter2", "BotCharacter3", "BotCharacter4", "BotCharacter5")
+# No bots would look like this
+$Bots = @()
 
+JSON file notes
 The sample JSON file should be fairly self explanatory, but here's a couple of quick comments.
 
   # The path to your EQ Game exe for the driver of your team
