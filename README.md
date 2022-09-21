@@ -81,31 +81,31 @@ The rest of the JSON file is to define logins and characters.  Multiple characte
 "Accounts" : [  
 	{  
     "Account" : "Account1",  
-    "Characters" : [ "Character1", "Character2" ]  
+    "Characters" : [ "Character1", "Character7" ]  
     },  
     {  
     "Account" : "Account2",  
-    "Characters" : [ "Character1", "Character2" ]  
+    "Characters" : [ "Character2", "Character8" ]  
     },  
     {  
     "Account" : "Account3",  
-    "Characters" : [ "Character1", "Character2" ]  
+    "Characters" : [ "Character3", "Character9" ]  
     },  
     {  
     "Account" : "Account4",  
-    "Characters" : [ "Character1", "Character2" ]  
+    "Characters" : [ "Character4", "Character10" ]  
     },  
     {  
     "Account" : "Account5",  
-    "Characters" : [ "Character1", "Character2" ]  
+    "Characters" : [ "Character5", "Character11" ]  
     },  
 	{  
     "Account" : "Account6",  
-    "Characters" : [ "Character1", "Character2" ]  
+    "Characters" : [ "Character6", "Character12" ]  
     },  
     {  
     "Account" : "Account7",  
-    "Characters" : [ "Character1" ]  
+    "Characters" : [ "Character13" ]  
     }  
   ]  
   
