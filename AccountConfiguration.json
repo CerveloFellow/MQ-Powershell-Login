@@ -1,0 +1,44 @@
+{
+  "DriverClientFilePath" : "C:\\Project Lazarus - Main\\eqgame.exe",
+  "DriverClientWorkingDirectory" : "C:\\Project Lazarus - Main",
+  "BotClientFilePath" : "C:\\Project Lazarus\\eqgame.exe",
+  "BotClientWorkingDirectory" : "C:\\Project Lazarus",
+  "MacroQuestFilePath" : "C:\\E3_RoF2\\MacroQuest2.exe",
+  "MacroQuestWorkingDirectory" : "C:\\E3_RoF2",
+  "MacroQuestProcessName" : "MacroQuest2",
+  "EverQuestProcessName" : "eqgame",
+  "EQBCServerFilePath" : "C:\\E3_RoF2\\EQBCServer.exe",
+  "EQBCServerWorkingDirectory" : "C:\\E3_RoF2",
+  "EQBCServerProcessName" : "EQBCServer",
+  "AutoLoginFile" : "C:\\E3_RoF2\\config\\MQ2AutoLogin.ini",
+  "Accounts" : [ 
+	{
+    "Account" : "Account1",
+    "Characters" : [ "Character1", "Character7" ]
+    },
+    {
+    "Account" : "Account2",
+    "Characters" : [ "Character2", "Character8" ]
+    },
+    {
+    "Account" : "Account3",
+    "Characters" : [ "Character2", "Character9" ]
+    },
+    {
+    "Account" : "Account4",
+    "Characters" : [ "Character4", "Character10" ]
+    },
+    {
+    "Account" : "Account5",
+    "Characters" : [ "Character5", "Character11" ]
+    },
+	{
+    "Account" : "Account6",
+    "Characters" : [ "Character6", "Character12" ]
+    },
+    {
+    "Account" : "Account7",
+    "Characters" : [ "Character13" ]
+    }
+  ]
+}
